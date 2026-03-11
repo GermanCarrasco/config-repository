@@ -1,19 +1,37 @@
+# Para prod lo ideal
+# spring:
+#   cloud:
+#     gateway:
+
+#       discovery:
+#         locator:
+#           enabled: true
+#           lower-case-service-id: true
+
+#       routes:
+
+#         - id: customer-service
+#           uri: lb://CUSTOMER-SERVICE
+#           predicates:
+#             - Path=/customers/**
+
+#         - id: account-service
+#           uri: lb://ACCOUNT-SERVICE
+#           predicates:
+#             - Path=/accounts/**
+
+#         - id: transaction-service
+#           uri: lb://TRANSACTION-SERVICE
+#           predicates:
+#             - Path=/transactions/**
+
+
+# Para dev lo ideal
 spring:
   cloud:
     gateway:
-      routes:
 
-        - id: customer-service
-          uri: lb://CUSTOMER-SERVICE
-          predicates:
-            - Path=/customers/**
-
-        - id: account-service
-          uri: lb://ACCOUNT-SERVICE
-          predicates:
-            - Path=/accounts/**
-
-        - id: transaction-service
-          uri: lb://TRANSACTION-SERVICE
-          predicates:
-            - Path=/transactions/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
