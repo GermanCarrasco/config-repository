@@ -35,3 +35,32 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+
+      routes:
+
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customers/**
+          filters:
+            - JwtAuthenticationFilter
+        
+        - id: account-service
+          uri: lb://ACCOUNT-SERVICE
+          predicates:
+            - Path=/accounts/**
+          filters:
+          - JwtAuthenticationFilter
+
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+         # TRANSACTION SERVICE
+        - id: transaction-service
+          uri: lb://TRANSACTION-SERVICE
+          predicates:
+            - Path=/transactions/**
+          filters:
+            - JwtAuthenticationFilter
