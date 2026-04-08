@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'account-service'
+    eureka_sd_configs:
+      - server: "http://host.docker.internal:8761/eureka"
+
+    relabel_configs:
+      - source_labels: [__meta_eureka_app_name]
+        regex: ACCOUNT-SERVICE
+        action: keep
+
+      - source_labels: [__meta_eureka_instance_hostname, __meta_eureka_instance_port]
+        target_label: __address__
+        replacement: $1:$2
