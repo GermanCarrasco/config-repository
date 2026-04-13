@@ -74,5 +74,5 @@ spring:
     host: localhost
     port: 6379
 
-  jwt:
-    secret: germanSuperSecret2026*
+jwt:
+  secret: germanSuperSecret2026*
