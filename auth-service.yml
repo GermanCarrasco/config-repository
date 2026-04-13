@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/auth_db
-    username: postgres
-    password: postgres
+    username: admin
+    password: admin123
 
 jwt:
   secret: mySuperSecretKey123456
