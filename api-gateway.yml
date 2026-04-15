@@ -75,4 +75,5 @@ spring:
     port: 6379
 
 jwt:
-  secret: germanSuperSecret2026*
+  secret: mySuperSecretKey123456
+  expiration: 900000 # 15 minutos
