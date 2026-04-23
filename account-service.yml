@@ -1,5 +1,5 @@
 server:
-  port: 8083   # importante para microservicios
+  port: 0   # importante para microservicios
 
 spring:
   datasource:
